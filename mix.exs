@@ -1,10 +1,16 @@
 defmodule Messenger.Mixfile do
   use Mix.Project
 
+  @description """
+    Facebook messenger API client for Elixir
+  """
+
   def project do
     [app: :messenger,
      version: "0.0.1",
      elixir: "~> 1.2",
+     name: "Messenger",
+     description: @description,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps]
@@ -29,5 +35,11 @@ defmodule Messenger.Mixfile do
   defp deps do
     [{:httpoison, "~> 0.8.0"},
       {:poison, "~> 1.5.2"}]
+  end
+
+  defp package do
+    [ maintainers: ["Andrea Franz"],
+      licenses: ["MIT"],
+      links: %{"Github" => "https://github.com/pilu/messenger"} ]
   end
 end

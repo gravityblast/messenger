@@ -34,8 +34,8 @@ my_user_id = System.get_env "MY_USER_ID"
 recipient = Recipient.new
             |> Recipient.put_id(my_user_id)
 
-message = Message.new
-          |> Message.put_text("Hello world")
+message = TextMessage.new
+          |> TextMessage.put_text("Hello world")
 
 resp = Request.new
         |> Request.put_recipient(recipient)
