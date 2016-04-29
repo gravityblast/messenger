@@ -1,10 +1,10 @@
 defmodule Messenger.Request do
-  alias Messenger.Message
+  alias Messenger.TextMessage
   alias Messenger.Recipient
   alias Messenger.Request
   alias Messenger.API
 
-  defstruct [recipient: %Recipient{}, message: %Message{}]
+  defstruct [recipient: %Recipient{}, message: %TextMessage{}]
 
   def new do
     %Request{}
@@ -14,7 +14,7 @@ defmodule Messenger.Request do
     Map.put request, :recipient, recipient
   end
 
-  def put_message request = %Request{}, message = %Message{} do
+  def put_message request = %Request{}, message = %TextMessage{} do
     Map.put request, :message, message
   end
 

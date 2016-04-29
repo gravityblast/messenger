@@ -1,7 +1,7 @@
 defmodule Messenger.RequestTest do
   use ExUnit.Case, async: true
 
-  alias Messenger.Message
+  alias Messenger.TextMessage
   alias Messenger.Recipient
   alias Messenger.Request
 
@@ -22,7 +22,7 @@ defmodule Messenger.RequestTest do
   end
 
   test ".put_message" do
-    message = %Message{text: "hello world"}
+    message = %TextMessage{text: "hello world"}
     expected = %Request{
       message: message
     }

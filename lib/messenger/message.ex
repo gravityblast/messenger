@@ -1,17 +1,7 @@
 defmodule Messenger.Message do
-  alias Messenger.Message
+  alias Messenger.TextMessage
 
-  defstruct [:text, :attachment]
-
-  def new do
-    %Message{}
-  end
-
-  def put_text message = %Message{}, text do
-    Map.put message, :text, text
-  end
-
-  def put_text nil, text do
-    new |> put_text(text)
+  def new_text do
+    TextMessage.new
   end
 end
